@@ -8,7 +8,7 @@ public class ThesisIsComingApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ThesisIsComingApplication.class, args);
-        System.out.println("The application is working");
+        //System.out.println("The application is working");
     }
 
 }
