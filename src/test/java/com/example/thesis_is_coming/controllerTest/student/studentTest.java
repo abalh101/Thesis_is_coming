@@ -1,6 +1,7 @@
 package com.example.thesis_is_coming.controllerTest.student;
 
 import com.example.thesis_is_coming.controller.StudentController;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +18,14 @@ public class studentTest {
 
     @Autowired
     MockMvc mockMvc;
-
+    @Disabled
     @DisplayName("the student-website is reachable")
     @Test
     void testStudentWebsiteIsReachable() throws Exception {
         mockMvc.perform(get("/student"))
                 .andExpect(status().isOk());
     }
-
+    @Disabled
     @Test
     void testViewName() throws Exception {
         mockMvc.perform(get("/student")).

@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 //Entity -> hat eine eigene ID
 public record Datei (
-        Integer DateiID,
+        Integer dateiID,
         String systemDateiName,
-        String OptionaleBeschreibung,
+        String optionaleBeschreibung,
         LocalDate uploadDatum,
         DateiTyp dateiTyp
 ) {

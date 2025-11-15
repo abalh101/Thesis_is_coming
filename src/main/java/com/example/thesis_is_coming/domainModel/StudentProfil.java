@@ -5,7 +5,7 @@ import java.util.List;
 
 public record StudentProfil(
         Integer studentID,
-        String StudentName,
+        String studentName,
         KontaktInfo kontaktInfo,
         List<Fachgebiet> intersse,
         List<Modules> bestandeneModulle

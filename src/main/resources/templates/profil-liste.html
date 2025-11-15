@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil-Liste</title>
+</head>
+<body>
+<h2>Alle Studentenprofile</h2>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Rufnummer</th>
+        <th>Interessen</th>
+        <th>Bestandene Module</th>
+    </tr>
+    <tr th:each="s : ${studenten}"> <!--Studenten kommt aus dem Controller aus dem Modelattribute-->
+        <td th:text="${s.studentID()}"></td>
+        <td th:text="${s.studentName()}"></td>
+        <td th:text="${s.kontaktInfo.email()}"></td>
+        <td th:text="${s.kontaktInfo.rufnummer()}"></td>
+        <td th:text="${s.intersse()}"></td>
+        <td th:text="${s.bestandeneModulle()}"></td>
+    </tr>
+</table>
+
+<br>
+<a th:href="@{/profil/neu}">Neuen Studenten anlegen</a>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
