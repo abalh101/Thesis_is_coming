@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profil</title>
+</head>
+<body>
+<h2>Studentenprofil anlegen</h2>
+
+
+
+<form th:action="@{/profil/neu}" th:object="${studentForm}" method="post">
+
+    <label >Name:</label><br>
+    <input type="text" th:field="*{name}" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" th:field="*{email}" required><br><br>
+
+    <label>Rufnummer:</label><br>
+    <input type="text" th:field="*{rufnummer}"><br><br>
+
+    <label>Interessen (kommagetrennt):</label><br>
+    <input type="text" th:field="*{interssen}" placeholder="Java, Web, AlDat .."><br><br>
+
+    <label>Bestandene Module (kommagetrennt):</label><br>
+    <input type="text" th:field="*{bestandeneModulle}" placeholder="Probra , AlDat .."><br><br>
+
+    <button type="submit">Speichern</button>
+</form>
+
+<br>
+<a th:href="@{/profil/alle}">Zur Übersicht</a>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
