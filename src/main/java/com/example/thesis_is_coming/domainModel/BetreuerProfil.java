@@ -6,7 +6,7 @@ import java.util.List;
 
 public record BetreuerProfil(
         Integer betreuerID,
-        String name,
+        String betruerName,
         KontaktInfo kontaktInfo,
         List<Fachgebiet> fachgebiete,
         List<Datei> datei,

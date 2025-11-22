@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuen Betreuer anlegen</title>
+</head>
+<body>
+<h2>Betreuerprofil anlegen</h2>
+
+<form th:action="@{/betreuer/neu}" th:object="${betreuerForm}" method="post">
+
+    <label>Name: </label><br>
+    <input type="text" th:field="*{name}" required /><br><br>
+
+    <label>Email: </label><br>
+    <input type="text" th:field="*{email}" required /><br><br>
+
+    <label>Rufnummer: </label><br>
+    <input type="text" th:field="*{rufnummer}" required /><br><br>
+
+    <label>Fachgebiete: </label><br>
+    <input type="text" th:field="*{fachgebiete}" placeholder="KI, Web, Security" required /><br><br>
+
+    <label>Profil Links: </label><br>
+    <input type="text" th:field="*{profilLinks}" placeholder="http://..." required /><br><br>
+
+    <button type="submit">Speichern</button>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Betruer-Liste</title>
+</head>
+<body>
+<h2>Alle Betruerprofile</h2>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Rufnummer</th>
+        <th>Fachgebiete</th>
+        <th>Links</th>
+    </tr>
+    <tr th:each="s : ${betreuer}">
+        <td th:text="${s.betreuerID()}"></td>
+        <td th:text="${s.betruerName()}"></td> <td th:text="${s.kontaktInfo.email()}"></td>
+        <td th:text="${s.kontaktInfo.rufnummer()}"></td>
+        <td th:text="${s.fachgebiete()}"></td>
+
+        <td th:text="${s.profielLinks()}"></td>
+
+    </tr>
+</table>
+
+<br>
+<a th:href="@{/betreuer/neu}">Neuen Betreuer anlegen</a>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

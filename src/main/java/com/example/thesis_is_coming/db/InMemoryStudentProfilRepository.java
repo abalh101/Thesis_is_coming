@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-
+//DAO
 @Repository
 public class InMemoryStudentProfilRepository implements StudentRepository {
     private final Map<Integer, StudentProfil> database = new ConcurrentHashMap<>();

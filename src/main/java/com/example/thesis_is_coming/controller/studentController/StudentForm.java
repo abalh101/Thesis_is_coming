@@ -1,4 +1,4 @@
-package com.example.thesis_is_coming.controller;
+package com.example.thesis_is_coming.controller.studentController;
 
 public class StudentForm {
     private String name;

@@ -13,6 +13,7 @@ public class StudentProfilService {
     private final StudentRepository studentRepository;
 
     public StudentProfilService(StudentRepository studentRepository) {
+
         this.studentRepository = studentRepository;
     }
 

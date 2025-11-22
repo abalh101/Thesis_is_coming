@@ -1,4 +1,4 @@
-package com.example.thesis_is_coming.controller;
+package com.example.thesis_is_coming.controller.studentController;
 
 
 import com.example.thesis_is_coming.domainModel.Fachgebiet;
@@ -35,8 +35,7 @@ public class StudentController {
         /* Ein leeres StudentForm ist notwendig damit html das Formular mit Thymlief bindet
         * ohne new StudentForm wird ein Fehler geworfen, weil StudentFrom nicht existiert
         * Also Modelattribute verbindet html und objekt*/
-        return "profil-form";
-    }
+        return "student/profil-form";    }
 
     //  Speichern
     @PostMapping("/neu")
@@ -54,7 +53,7 @@ public class StudentController {
                 .map(String::trim)
                 .filter(s -> !s.isEmpty())
                     .map(Modules::new)
-                .collect(Collectors.toList());
+               .collect(Collectors.toList());
 
         StudentProfil profil = new StudentProfil(
                 generateId(),      // spöter von der Datenbank
@@ -71,8 +70,7 @@ public class StudentController {
     @GetMapping("/alle")
     public String list(Model model) {
         model.addAttribute("studenten", studentProfilService.findAll());
-        return "profil-liste";
-    }
+        return "student/profil-liste";    }
 
     // Id -> später durch die Datenbank ersetzt
     private Integer generateId() {

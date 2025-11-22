@@ -1,9 +1,12 @@
 package com.example.thesis_is_coming.service.repository;
 
 import com.example.thesis_is_coming.domainModel.StudentProfil;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+
+
 
 public interface StudentRepository {
     StudentProfil save(StudentProfil studentProfil);

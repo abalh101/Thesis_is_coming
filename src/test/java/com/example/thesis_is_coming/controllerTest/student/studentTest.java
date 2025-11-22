@@ -1,6 +1,6 @@
 package com.example.thesis_is_coming.controllerTest.student;
 
-import com.example.thesis_is_coming.controller.StudentController;
+import com.example.thesis_is_coming.controller.studentController.StudentController;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

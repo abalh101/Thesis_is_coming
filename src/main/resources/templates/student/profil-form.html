@@ -10,7 +10,6 @@
 
 
 <form th:action="@{/profil/neu}" th:object="${studentForm}" method="post">
-
     <label >Name:</label><br>
     <input type="text" th:field="*{name}" required><br><br>
 
@@ -30,12 +29,7 @@
 </form>
 
 <br>
-<a th:href="@{/profil/alle}">Zur Übersicht</a>
+<a th:href="@{/profil/neu}">Neuen Studenten anlegen</a>
 </body>
 </html>
-</title>
-</head>
-<body>
 
-</body>
-</html>
