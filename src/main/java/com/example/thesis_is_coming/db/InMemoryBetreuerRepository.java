@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository// DB muss als Repository annotiert werden
-public class InMemoryBetruerRepository  implements BetruerRepository {
+public class InMemoryBetreuerRepository implements BetruerRepository {
     private final Map<Integer, BetreuerProfil> database = new ConcurrentHashMap<>();
 
 

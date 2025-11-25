@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class BetruerProfilService {
+public class BetreuerProfilService {
 
     private final BetruerRepository betruerRepository;
 
-    public BetruerProfilService(BetruerRepository betruerRepository) {
+    public BetreuerProfilService(BetruerRepository betruerRepository) {
         this.betruerRepository = betruerRepository;
     }
 

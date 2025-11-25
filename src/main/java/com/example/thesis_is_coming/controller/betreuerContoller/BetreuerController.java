@@ -5,7 +5,7 @@ import com.example.thesis_is_coming.domainModel.BetreuerProfil;
 import com.example.thesis_is_coming.domainModel.Fachgebiet;
 import com.example.thesis_is_coming.domainModel.KontaktInfo;
 import com.example.thesis_is_coming.domainModel.Link;
-import com.example.thesis_is_coming.service.BetruerProfilService;
+import com.example.thesis_is_coming.service.BetreuerProfilService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,24 +20,24 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/betreuer")
-public class BetruerController {
-    private final BetruerProfilService betruerProfilService;
+public class BetreuerController {
+    private final BetreuerProfilService betreuerProfilService;
 
     @Autowired
-    public BetruerController(BetruerProfilService betruerProfilService) {
-        this.betruerProfilService = betruerProfilService;
+    public BetreuerController(BetreuerProfilService betreuerProfilService) {
+        this.betreuerProfilService = betreuerProfilService;
     }
 
     //Formular anzeigen
     @GetMapping("/neu")
     public String createBetruer(Model model) {
-        model.addAttribute("betreuerForm" , new BetruerForm());
+        model.addAttribute("betreuerForm" , new BetreuerForm());
         return "betruer/Betreuer-form";
     }
 
     //speichern
     @PostMapping("/neu")
-    public String saveBetreuer(@ModelAttribute("betreuerForm") BetruerForm form) {
+    public String saveBetreuer(@ModelAttribute("betreuerForm") BetreuerForm form) {
 
 
         KontaktInfo kontaktInfo = new KontaktInfo(form.getEmail(), form.getRufnummer());
@@ -65,18 +65,18 @@ public class BetruerController {
                 linkList
         );
 
-        betruerProfilService.save(profil);
+        betreuerProfilService.save(profil);
 
         return "redirect:/betreuer/alle";
     }
 
     @GetMapping("/alle")
     public String list(Model model) {
-        model.addAttribute("betreuer", betruerProfilService.findAll());
+        model.addAttribute("betreuer", betreuerProfilService.findAll());
         return "betruer/Betreuer-liste";    }
 
     private Integer generateId() {
-        return betruerProfilService.findAll().size() + 1;
+        return betreuerProfilService.findAll().size() + 1;
     }
 
 }

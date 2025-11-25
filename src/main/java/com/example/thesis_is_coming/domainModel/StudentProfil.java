@@ -7,8 +7,8 @@ public record StudentProfil(
         Integer studentID,
         String studentName,
         KontaktInfo kontaktInfo,
-        List<Fachgebiet> intersse,
-        List<Modules> bestandeneModulle
+        List<Fachgebiet> interessen,
+        List<Modules> bestandeneModule
 ) {
 
 }

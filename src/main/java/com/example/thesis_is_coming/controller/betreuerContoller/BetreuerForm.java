@@ -1,8 +1,6 @@
 package com.example.thesis_is_coming.controller.betreuerContoller;
 
-import com.example.thesis_is_coming.domainModel.KontaktInfo;
-
-public class  BetruerForm {
+public class BetreuerForm {
     private String name;
     private String email;
     private String rufnummer;
