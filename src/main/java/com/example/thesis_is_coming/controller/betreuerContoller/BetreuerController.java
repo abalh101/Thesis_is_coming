@@ -1,7 +1,7 @@
 package com.example.thesis_is_coming.controller.betreuerContoller;
 
 
-import com.example.thesis_is_coming.domainModel.BetreuerProfil;
+import com.example.thesis_is_coming.domainModel.betreuer.BetreuerProfil;
 import com.example.thesis_is_coming.domainModel.Fachgebiet;
 import com.example.thesis_is_coming.domainModel.KontaktInfo;
 import com.example.thesis_is_coming.domainModel.Link;

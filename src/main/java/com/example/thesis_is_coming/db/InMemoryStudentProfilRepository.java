@@ -1,7 +1,7 @@
 package com.example.thesis_is_coming.db;
 
 import com.example.thesis_is_coming.service.repository.StudentRepository;
-import com.example.thesis_is_coming.domainModel.StudentProfil;
+import com.example.thesis_is_coming.domainModel.student.StudentProfil;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

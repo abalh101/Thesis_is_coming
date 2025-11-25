@@ -1,6 +1,6 @@
 package com.example.thesis_is_coming.db;
 
-import com.example.thesis_is_coming.domainModel.BetreuerProfil;
+import com.example.thesis_is_coming.domainModel.betreuer.BetreuerProfil;
 import com.example.thesis_is_coming.service.repository.BetreuerRepository;
 import org.springframework.stereotype.Repository;
 

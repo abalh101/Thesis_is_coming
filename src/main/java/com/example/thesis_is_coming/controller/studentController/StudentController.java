@@ -4,7 +4,7 @@ package com.example.thesis_is_coming.controller.studentController;
 import com.example.thesis_is_coming.domainModel.Fachgebiet;
 import com.example.thesis_is_coming.domainModel.KontaktInfo;
 import com.example.thesis_is_coming.domainModel.Modules;
-import com.example.thesis_is_coming.domainModel.StudentProfil;
+import com.example.thesis_is_coming.domainModel.student.StudentProfil;
 import com.example.thesis_is_coming.service.StudentProfilService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

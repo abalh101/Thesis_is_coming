@@ -1,4 +1,9 @@
-package com.example.thesis_is_coming.domainModel;
+package com.example.thesis_is_coming.domainModel.betreuer;
+
+import com.example.thesis_is_coming.domainModel.Datei;
+import com.example.thesis_is_coming.domainModel.Fachgebiet;
+import com.example.thesis_is_coming.domainModel.KontaktInfo;
+import com.example.thesis_is_coming.domainModel.Link;
 
 import java.util.List;
 

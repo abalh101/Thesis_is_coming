@@ -1,6 +1,6 @@
 package com.example.thesis_is_coming.service.repository;
 
-import com.example.thesis_is_coming.domainModel.BetreuerProfil;
+import com.example.thesis_is_coming.domainModel.betreuer.BetreuerProfil;
 
 import java.util.List;
 import java.util.Optional;
