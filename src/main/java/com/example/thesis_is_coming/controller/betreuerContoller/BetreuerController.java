@@ -59,6 +59,7 @@ public class BetreuerController {
         BetreuerProfil profil = new BetreuerProfil(
                 generateId(),
                 form.getName(),
+                List.of(),
                 kontaktInfo,
                 fachgebieteList,
                 List.of(), // Leere Liste für Dateien da noch kein File-Upload implementiert

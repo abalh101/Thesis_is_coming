@@ -1,7 +1,7 @@
 package com.example.thesis_is_coming.db;
 
 import com.example.thesis_is_coming.domainModel.BetreuerProfil;
-import com.example.thesis_is_coming.service.repository.BetruerRepository;
+import com.example.thesis_is_coming.service.repository.BetreuerRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository// DB muss als Repository annotiert werden
-public class InMemoryBetreuerRepository implements BetruerRepository {
+public class InMemoryBetreuerRepository implements BetreuerRepository {
     private final Map<Integer, BetreuerProfil> database = new ConcurrentHashMap<>();
 
 

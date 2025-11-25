@@ -1,7 +1,7 @@
 package com.example.thesis_is_coming.service;
 
 import com.example.thesis_is_coming.domainModel.BetreuerProfil;
-import com.example.thesis_is_coming.service.repository.BetruerRepository;
+import com.example.thesis_is_coming.service.repository.BetreuerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,20 +10,20 @@ import java.util.Optional;
 @Service
 public class BetreuerProfilService {
 
-    private final BetruerRepository betruerRepository;
+    private final BetreuerRepository betreuerRepository;
 
-    public BetreuerProfilService(BetruerRepository betruerRepository) {
-        this.betruerRepository = betruerRepository;
+    public BetreuerProfilService(BetreuerRepository betreuerRepository) {
+        this.betreuerRepository = betreuerRepository;
     }
 
     public BetreuerProfil save(BetreuerProfil betreuerProfil) {
-        return betruerRepository.save(betreuerProfil);
+        return betreuerRepository.save(betreuerProfil);
     }
     public Optional<BetreuerProfil> findById(Integer betreuerId) {
-        return betruerRepository.findById(betreuerId);
+        return betreuerRepository.findById(betreuerId);
     }
 
     public List<BetreuerProfil> findAll() {
-        return betruerRepository.findAll();
+        return betreuerRepository.findAll();
     }
 }
