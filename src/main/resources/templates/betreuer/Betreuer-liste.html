@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Betruer-Liste</title>
+    <title>Betreuer-Liste</title>
 </head>
 <body>
-<h2>Alle Betruerprofile</h2>
+<h2>Alle Betreuerprofile</h2>
 
 <table border="1" cellpadding="6">
     <tr>
@@ -18,11 +18,11 @@
     </tr>
     <tr th:each="s : ${betreuer}">
         <td th:text="${s.betreuerID()}"></td>
-        <td th:text="${s.betruerName()}"></td> <td th:text="${s.kontaktInfo.email()}"></td>
+        <td th:text="${s.betreuerName()}"></td> <td th:text="${s.kontaktInfo.email()}"></td>
         <td th:text="${s.kontaktInfo.rufnummer()}"></td>
         <td th:text="${s.fachgebiete()}"></td>
 
-        <td th:text="${s.profielLinks()}"></td>
+        <td th:text="${s.profilLinks()}"></td>
 
     </tr>
 </table>

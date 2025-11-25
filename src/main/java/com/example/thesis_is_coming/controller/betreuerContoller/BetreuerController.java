@@ -32,7 +32,7 @@ public class BetreuerController {
     @GetMapping("/neu")
     public String createBetruer(Model model) {
         model.addAttribute("betreuerForm" , new BetreuerForm());
-        return "betruer/Betreuer-form";
+        return "betreuer/Betreuer-form";
     }
 
     //speichern
@@ -74,7 +74,7 @@ public class BetreuerController {
     @GetMapping("/alle")
     public String list(Model model) {
         model.addAttribute("betreuer", betreuerProfilService.findAll());
-        return "betruer/Betreuer-liste";    }
+        return "betreuer/Betreuer-liste";    }
 
     private Integer generateId() {
         return betreuerProfilService.findAll().size() + 1;
