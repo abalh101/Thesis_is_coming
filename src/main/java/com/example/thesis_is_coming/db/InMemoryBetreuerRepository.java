@@ -25,7 +25,7 @@ public class InMemoryBetreuerRepository implements BetreuerRepository {
     @Override
     public Optional<BetreuerProfil> findById(Integer betreuerID) {
         return Optional.ofNullable(database.get(betreuerID));
-    };
+    }
 
     @Override
     public List<BetreuerProfil> findAll() {
