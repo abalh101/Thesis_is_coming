@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Themen Auswahl</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        nav { margin-bottom: 20px; background: #eee; padding: 10px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #333; font-weight: bold; }
+
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+
+        .status-frei { color: green; font-weight: bold; }
+        .status-belegt { color: red; font-weight: bold; }
+
+        /* Nachrichten Boxen */
+        .alert { padding: 15px; margin-bottom: 20px; border-radius: 4px; }
+        .alert-error { color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; }
+        .alert-success { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; }
+
+        .action-form { display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a th:href="@{/profil/alle}">Studenten Liste</a>
+    <a th:href="@{/profil/neu}">Neuer Student</a> |
+    <a th:href="@{/betreuer/alle}">Betreuer Liste</a>
+    <a th:href="@{/betreuer/neu}">Neuer Betreuer</a> |
+    <a th:href="@{/themen/alle}">Themen Übersicht</a>
+</nav>
+
+<h2>Verfügbare Thesis-Themen</h2>
+
+<div th:if="${errorMessage}" class="alert alert-error">
+    <strong th:text="${errorMessage}"></strong>
+</div>
+<div th:if="${successMessage}" class="alert alert-success">
+    <span th:text="${successMessage}"></span>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Titel</th>
+        <th>Beschreibung</th>
+        <th>Status</th>
+        <th>Aktion (Simulation)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="t : ${themen}">
+        <td th:text="${t.ID()}"></td>
+        <td th:text="${t.titel()}"></td>
+        <td th:text="${t.beschreibung().orElse('Keine Beschreibung')}"></td>
+
+        <td>
+            <span th:if="${t.istVergeben()}" class="status-belegt">
+                VERGEBEN (Student ID: <span th:text="${t.assignedStudentID()}"></span>)
+            </span>
+            <span th:unless="${t.istVergeben()}" class="status-frei">
+                FREI
+            </span>
+        </td>
+
+        <td>
+            <div th:unless="${t.istVergeben()}">
+                <form th:action="@{/themen/buchen}" method="post" class="action-form">
+                    <input type="hidden" name="themaID" th:value="${t.ID()}" />
+
+                    <select name="studentID" required>
+                        <option value="" disabled selected>Ich bin Student...</option>
+                        <option th:each="s : ${alleStudenten}"
+                                th:value="${s.studentID()}"
+                                th:text="${s.studentName() + ' (ID: ' + s.studentID() + ')'}">
+                        </option>
+                    </select>
+
+                    <button type="submit">Buchen</button>
+                </form>
+            </div>
+            <div th:if="${t.istVergeben()}">
+                <em>Keine Aktion möglich</em>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

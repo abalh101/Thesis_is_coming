@@ -13,6 +13,7 @@ import java.util.Optional;
 
 public record Themen(
         Integer ID,
+        Integer assignedStudentID,
         Integer betreuerID, // Referenz zum Betreuer per ID
         String titel,
         Optional<String> beschreibung,
@@ -22,5 +23,29 @@ public record Themen(
         List<Link> link
 ) {
 
+    public boolean istVergeben() {
+        return assignedStudentID != null;
+    }
+    //records sind immutable deswegen ersetzten wir das Objekt
+
+
+    public Themen vergebenAn(Integer studentID) {
+        if(this.istVergeben()) {
+            throw new IllegalStateException("Das Thema ist bereits vergeben");
+
+        }
+        return new Themen(
+                this.ID,
+                studentID,
+                this.betreuerID,
+                this.titel,
+                this.beschreibung,
+                this.datei,
+                this.fachgebiete,
+                this.anforderungen,
+                this.link
+
+        );
+    }
 };
 

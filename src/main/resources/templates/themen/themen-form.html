@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Neues Thema (Dummy)</title>
+    <style>body { font-family: sans-serif; padding: 20px; } input, textarea { width: 300px; display: block; margin-bottom: 10px; }</style>
+</head>
+<body>
+
+<h2>Neues Thema anlegen (Dummy Mode)</h2>
+
+<form th:action="@{/themen/neu}" th:object="${themenForm}" method="post">
+
+    <label>Titel:</label>
+    <input type="text" th:field="*{titel}" required placeholder="Titel der Arbeit">
+
+    <label>Beschreibung:</label>
+    <textarea th:field="*{beschreibung}" placeholder="Kurzbeschreibung"></textarea>
+
+    <label>Betreuer ID (Manuell eingeben, z.B. 101):</label>
+    <input type="number" th:field="*{betreuerID}" required>
+
+    <br>
+    <button type="submit">Erstellen</button>
+    <a th:href="@{/themen/alle}">Abbrechen</a>
+
+</form>
+
+</body>
+</html>
